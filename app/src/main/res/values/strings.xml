@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SlotMachine</string>
+    <string name="pointText">Points: 0</string>
+</resources>
