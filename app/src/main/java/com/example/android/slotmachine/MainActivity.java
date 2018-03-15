@@ -1,6 +1,6 @@
 package com.example.android.slotmachine;
 
-import android.media.Image;
+import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView s3; // slot 3
     private Handler handler;
     private Update update;
+    private Drawable[] a;
 
 
     @Override
@@ -25,32 +26,26 @@ public class MainActivity extends AppCompatActivity {
         update = new Update();
         handler = new Handler();
 
-        s1.setImageDrawable(getResources().getDrawable(R.drawable.cherry)); // the three default images for the slots
-        s2.setImageDrawable(getResources().getDrawable(R.drawable.grape));
-        s3.setImageDrawable(getResources().getDrawable(R.drawable.strawberry));
+        s1 = findViewById(R.id.slot1);
+        s2 = findViewById(R.id.slot2);
+        s3 = findViewById(R.id.slot3);
+
+        a = new Drawable[4];
+        a[0] = getResources().getDrawable(R.drawable.cherry);
+        a[1] = getResources().getDrawable(R.drawable.grape);
+        a[2] = getResources().getDrawable(R.drawable.strawberry);
+        a[3] = getResources().getDrawable(R.drawable.pear);
+
+        s1.setImageDrawable(a[0]);
+        s2.setImageDrawable(a[1]);
+        s3.setImageDrawable(a[2]);
 
     }
 
     public class Update implements Runnable {
 
-        private int r1; //the rate at which s1 will change backgrounds
-        private int r2; // the rate at which...
-        private int r3; // ...
-
-        public Update() {
-            Random r = new Random();
-            r1 = r.nextInt(501); // A percentage of 1/10th a second.
-            r2 = r.nextInt(501); // For example, if r1 = 400, it will update
-            r3 = r.nextInt(501); // every 1/10 * (400 / 100) = 4/10ths of a second.
-        }
-
         public void run() {
-            // try to think about how to make all of these update at certain times
-            // without making multiple different "Update" classes.
-
-        }
-
-        private void updateImage(ImageView i) {
+            
 
         }
     }

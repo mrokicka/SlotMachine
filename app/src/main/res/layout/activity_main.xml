@@ -17,6 +17,14 @@
         android:gravity="center">
 
         <ImageView
+            android:id="@+id/slot1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/image_background"/>
+
+        <ImageView
+            android:id="@+id/slot2"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginRight="10dp"
@@ -24,13 +32,7 @@
             />
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/image_background"
-            />
-
-        <ImageView
+            android:id="@+id/slot3"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="@drawable/image_background"
@@ -58,7 +60,6 @@
         android:progress="2"/>
 
     <Button
-        android:marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="START"
@@ -70,10 +71,5 @@
         android:layout_height="wrap_content"
         android:text="RULES"
         android:layout_gravity="center"/>
-
-
-
-
-
 
 </LinearLayout>
