@@ -4,6 +4,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 
 import java.util.Random;
@@ -14,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
     private ImageView s2; // slot 2
     private ImageView s3; // slot 3
     private Handler handler;
-    private Update update;
     private Drawable[] a;
 
 
@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        update = new Update();
         handler = new Handler();
 
         s1 = findViewById(R.id.slot1);
@@ -39,15 +38,34 @@ public class MainActivity extends AppCompatActivity {
         s1.setImageDrawable(a[0]);
         s2.setImageDrawable(a[1]);
         s3.setImageDrawable(a[2]);
-
     }
 
     public class Update implements Runnable {
 
-        public void run() {
-            
+        private ImageView i;
+        private int current;
+        private int rate;
 
+        public Update(ImageView i, int current) {
+            this.i = i;
+            this.current = current;
+
+            Random r = new Random();
+            rate = r.nextInt(301);
         }
+        public void run() {
+            i.setImageDrawable(a[current++ % 4]);
+            handler.postDelayed(this, rate);
+        }
+
+
+    }
+
+    public void startSpinning(View v) {
+        handler.post(new Update(s1, 0));
+        handler.post(new Update(s2, 1));
+        handler.post(new Update(s3, 2));
+
     }
 
 
