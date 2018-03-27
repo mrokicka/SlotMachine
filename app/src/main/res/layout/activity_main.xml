@@ -52,6 +52,7 @@
         />
 
     <SeekBar
+        android:id="@+id/seek"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:layout_width="match_parent"
@@ -60,6 +61,7 @@
         android:progress="2"/>
 
     <Button
+        android:id="@+id/startStopButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="START"
