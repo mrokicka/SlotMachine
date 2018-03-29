@@ -45,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
         startStop = findViewById(R.id.startStopButton);
         pointText = findViewById(R.id.points);
 
+        if(savedInstanceState != null) {
+            pointText.setText(savedInstanceState.getString("POINTS_TEXT"));
+        }
+
         seek = findViewById(R.id.seek);
         seek.setOnSeekBarChangeListener(
                 new SeekBar.OnSeekBarChangeListener() {
@@ -79,6 +83,14 @@ public class MainActivity extends AppCompatActivity {
         s2.setImageDrawable(a[1]);
         s3.setImageDrawable(a[2]);
     }
+
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putString("POINTS_TEXT", pointText.getText().toString());
+    }
+
 
     public class Update implements Runnable {
 
@@ -148,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Check again if s1.getDrawable().equals(a[0]) works.
         Update[] a = {update1, update2, update3};
-        if(a[1].getCurrent() == 0 && a[2].getCurrent() == 0 && a[3].getCurrent() == 0) {
+        if(a[0].getCurrent() == 0 && a[1].getCurrent() == 0 && a[2].getCurrent() == 0) {
             points = 200;
         } else {
             for(int i = 0; i < a.length; i++) {
