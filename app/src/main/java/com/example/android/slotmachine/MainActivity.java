@@ -177,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
         }
-
+        //awejgb;lkawhn;lbwen
         if(points >= 100) {
             Toast.makeText(this, "YOU WIN!!", Toast.LENGTH_LONG).show();
         } else {
