@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">SlotMachine</string>
     <string name="pointText">Points: 0</string>
+    <string name="ruleText">* Cherry: -50 points\n* Grape: 25 points\n* Strawberry: 30 points\n* Pear: 50 points\nThe Goal of this game is to match together three pictures such that the resulting sum of points obtained is at least 100.\nMATCH THREE CHERRIES TO GET 300 POINTS!</string>
 </resources>

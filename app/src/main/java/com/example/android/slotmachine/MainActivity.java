@@ -1,5 +1,6 @@
 package com.example.android.slotmachine;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -189,5 +190,9 @@ public class MainActivity extends AppCompatActivity {
         pointText.setText("Points: " + 0);
     }
 
-
+    public void rulesClick(View v) {
+        Intent i = new Intent(this, RulesActivity.class);
+        i.putExtra("POINTS_TEXT",  pointText.getText());
+        startActivity(i);
+    }
 }
